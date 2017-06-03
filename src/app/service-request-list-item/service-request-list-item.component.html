@@ -1,5 +1,14 @@
-<li class="collection-item">
-    <div>{{request.firstName}} {{request.lastName}}  <b>{{request.regNo}}</b><a class="waves-effect waves-light btn"> View </a> <a class="waves-effect waves-light btn">Delete</a>
+<li class="collection-item row">
+    <div class="input-field col s4">
+        {{request.firstName}} {{request.lastName}}
+    </div>
+    <div class="input-field col s4">
+        <b>{{request.regNo}}</b>
+    </div>
+    <div class="input-field col s2">
+        <a class="waves-effect waves-light btn"> View </a>
+    </div>
+    <div class="input-field col s2">
+        <a class="waves-effect waves-light btn">Delete</a>
     </div>
 </li>
-    
