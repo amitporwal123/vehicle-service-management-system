@@ -1,6 +1,3 @@
  <ul class="collection">
-      <li class="collection-item">Alvin</li>
-      <li class="collection-item">Alvin</li>
-      <li class="collection-item">Alvin</li>
-      <li class="collection-item">Alvin</li>
+        <app-service-request-list-item *ngFor="let request of requests" [request]="request" ></app-service-request-list-item>
     </ul>

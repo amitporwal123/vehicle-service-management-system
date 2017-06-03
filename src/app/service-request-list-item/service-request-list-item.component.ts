@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Input} from '@angular/core';
+import {Request} from '../shared/models/request';
 
 @Component({
   selector: 'app-service-request-list-item',
@@ -8,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class ServiceRequestListItemComponent implements OnInit {
 
   constructor() { }
+@Input() request:Request;
 
   ngOnInit() {
   }
