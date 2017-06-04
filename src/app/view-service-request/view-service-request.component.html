@@ -1,47 +1,47 @@
 <div class="row">
-  <form class="col offset-s2 s6">
-    <div class="row">
+  <form class="col offset-s2 s6" (ngSubmit)="onSubmit()" #requestForm="ngForm">
+         <div class="row">
       <div class="input-field col s6">
-        <input id="first_name" type="text" class="validate">
-        <label for="first_name">First Name</label>
+        <input id="firstName"  class="validate" type="text" required [(ngModel)]="requestModel.firstName" name="firstName" >
+        <label for="firstName">First Name</label>
       </div>
       <div class="input-field col s6">
-        <input id="last_name" type="text" class="validate">
-        <label for="last_name">Last Name</label>
+        <input id="lastName" type="text" class="validate" required [(ngModel)]="requestModel.lastName" name="lastName">
+        <label for="lastName">Last Name</label>
       </div>
     </div>
     <div class="row">
       <div class="input-field col s12">
-        <input id="regNo" type="text" class="validate">
+        <input id="regNo" type="text" class="validate" required [(ngModel)]="requestModel.regNo" name="regNo">
         <label for="regNo">Vehicle Registeration No</label>
       </div>
     </div>
     <div class="row">
       <div class="input-field col s12">
-        <input id="mobNum" type="text" class="validate">
-        <label for="mobNum">Mobile Number</label>
+        <input id="mobileNum" type="text" class="validate" required [(ngModel)]="requestModel.mobileNum" name="mobileNum">
+        <label for="mobileNum">Mobile Number</label>
       </div>
     </div>
 
     <div class="row">
       <div class="input-field col s12">
-        <textarea id="address" class="materialize-textarea"></textarea>
+        <textarea id="address" class="materialize-textarea" required [(ngModel)]="requestModel.address" name="address"></textarea>
         <label for="address">Address</label>
       </div>
     </div>
     <div class="row">
       <div class="input-field col s12">
-        <input type="date" id="pickupDate" class="datepicker">
-        <label for="pickupDate" class="active">Pick-Up Date</label>
+        <input type="date" id="pickUpDate" class="datepicker" required [(ngModel)]="requestModel.pickUpDate" name="pickUpDate">
+        <label for="pickUpDate" >Pick-Up Date</label>
       </div>
     </div>
     <div class="row">
       <div class="input-field col s12">
-        <input type="date" id="returnDate" class="datepicker">
-        <label for="returnDate" class="active">Return Date Date</label>
+        <input type="date" id="returnDate" class="datepicker" required [(ngModel)]="requestModel.returnDate" name="returnDate">
+        <label for="returnDate" >Return Date</label>
       </div>
     </div>
-    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    <button class="btn waves-effect waves-light" type="submit"  [disabled]="!requestForm.form.valid">Submit
       <i class="material-icons right">send</i>
   </button>
   </form>
