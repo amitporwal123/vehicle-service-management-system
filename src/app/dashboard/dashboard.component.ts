@@ -1,12 +1,39 @@
-import {Component} from '@angular/core';
+import {Component,ViewChild} from '@angular/core';
 import {ServiceRequestListComponent} from '../service-request-list/service-request-list.component';
-import {ViewServiceRequestComponent} from '../view-service-request/view-service-request.component';
-
+import { RequestService } from '../shared/services/request.service';
 @Component({
     selector:'dashboard',
-    templateUrl:'./dashboard.component.html',
-   
+    templateUrl:'./dashboard.component.html'
 })
 export class DashboardComponent{
 
+constructor(private requestService: RequestService){}
+
+
+    @ViewChild(ServiceRequestListComponent)
+    child:ServiceRequestListComponent;
+  undo():any{
+    // child is set
+    this.child.undoLastAction(1);
+  }
 }
+
+// @Component({
+//   selector: 'child-cmp',
+//   template: '<p>child</p>'
+// })
+// class ChildCmp {
+//   doSomething() {}
+// }
+// @Component({
+//   selector: 'some-cmp',
+//   template: '<child-cmp></child-cmp>',
+//   directives: [ChildCmp]
+// })
+// class SomeCmp {
+//   @ViewChild(ChildCmp) child:ChildCmp;
+//   ngAfterViewInit() {
+//     // child is set
+//     this.child.doSomething();
+//   }
+// }

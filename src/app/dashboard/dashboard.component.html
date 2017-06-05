@@ -2,11 +2,9 @@
 
 <div class="row">
   <div class="input-field col offset-s6 s2">
-    <a class="waves-effect waves-light btn"><i class="material-icons left">undo</i>Undo</a>
+    <a class="waves-effect waves-light btn" (click)="undo()"><i class="material-icons left">undo</i>Undo</a>
   </div>
   <div class="input-field col s4">
-    <a class="waves-effect waves-light btn"><i class="material-icons left">add</i>Add New Request</a>
+    <a class="waves-effect waves-light btn" routerLink="/add"><i class="material-icons left">add</i>Add New Request</a>
   </div>
 </div>
-
-<app-view-service-request> </app-view-service-request>

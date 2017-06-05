@@ -12,8 +12,7 @@ export class RequestService {
   //property
   private requestsUrl = 'api/requests';
   private headers = new Headers({ 'Content-Type': 'application/json' });
-
-  
+   
   getRequests(): Promise<Request[]> {
     return this.http.get(this.requestsUrl)
       .toPromise()
@@ -21,9 +20,16 @@ export class RequestService {
       .catch(this.handleError);
   }
 
+getRequestByID(id: number): Promise<Request> {
+  const url = `${this.requestsUrl}/${id}`;
+  return this.http.get(url)
+    .toPromise()
+    .then(response => response.json().data as Request)
+    .catch(this.handleError);
+}
 
   postRequest(request: Request): Promise<Request> {
-    console.log(request); // for demo purposes only
+    // console.log(request); // for demo purposes only
         return this.http
       .post(this.requestsUrl, JSON.stringify(
         {
@@ -41,9 +47,20 @@ export class RequestService {
       .catch(this.handleError);
   }
 
+
+delete(request:Request): Promise<void> {
+  const url = `${this.requestsUrl}/${request.id}`;
+  return this.http.delete(url, {headers: this.headers})
+    .toPromise()
+    .then(() => null)
+    .catch(this.handleError);
+}
+
+
+
 private handle(res: any): Promise<Request> {
-    console.log(res); // for demo purposes only
-    return Promise.resolve( res.json().data as Request);
+    // console.log(res); // for demo purposes only
+      return Promise.resolve( res.json().data as Request);
   }
 
   private handleError(error: any): Promise<any> {

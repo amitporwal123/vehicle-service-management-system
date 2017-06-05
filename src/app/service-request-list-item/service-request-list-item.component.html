@@ -6,9 +6,9 @@
         <b>{{request.regNo}}</b>
     </div>
     <div class="input-field col s2">
-        <a class="waves-effect waves-light btn"> View </a>
+        <a class="waves-effect waves-light btn" [routerLink]="['/view',request.id]"> View </a>
     </div>
     <div class="input-field col s2">
-        <a class="waves-effect waves-light btn">Delete</a>
+        <a class="waves-effect waves-light btn" (click)="onDeletePress(request)">Delete</a>
     </div>
 </li>

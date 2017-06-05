@@ -5,10 +5,10 @@ import {Request} from '../models/request';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     let requests:Request[] = [
-          new Request('Ashish','Gupta','DL3CBR5386',9999915101,'36-D,Madan park',new Date(2017,6,18),new Date(2017,6,20)),
-          new Request('Nikita','Gupta','DL3CBR5386',9818494909,'36-D,Madan park',new Date(2017,6,18),new Date(2017,6,20)),
-          new Request('Bhavya','Gupta','DL8SBY7593',9999936614,'36-D,Madan park',new Date(2017,6,18),new Date(2017,6,20)),
-          new Request('Sunita','Gupta','DL3CBR5386',9212368191,'36-D,Madan park',new Date(2017,6,18),new Date(2017,6,20)), 
+          new Request(1,'Ashish','Gupta','DL3CBR5386',9999915101,'36-D,Madan park',new Date(2017,0,18),new Date(2017,6,20)),
+          new Request(2,'Nikita','Gupta','DL3CBR5386',9818494909,'36-D,Madan park',new Date(2017,6,18),new Date(2017,6,20)),
+          new Request(3,'Bhavya','Gupta','DL8SBY7593',9999936614,'36-D,Madan park',new Date(2017,6,19),new Date(2017,6,20)),
+          new Request(4,'Sunita','Gupta','DL3CBR5386',9212368191,'36-D,Madan park',new Date(2017,6,18),new Date(2017,6,20)), 
     ];
 //     let requests:Request[] = [
 //         {
