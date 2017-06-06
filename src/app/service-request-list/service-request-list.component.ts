@@ -30,7 +30,13 @@ export class ServiceRequestListComponent implements OnInit {
       });
   }
 
-  undoLastAction(id: number, request?: Request) {
-    console.log(`Remove element :${request} from list`)
+  undoLastAction(request: Request) {
+    if(!this.requestService.isLastActionAdd){
+      this.requests = this.requests.filter((req) => req.id !== request.id);
+    }
+    else
+    {
+      this.requests.push(request);
+    }
   }
 }

@@ -14,7 +14,10 @@ constructor(private requestService: RequestService){}
     child:ServiceRequestListComponent;
   undo():any{
     // child is set
-    this.child.undoLastAction(1);
+
+this.requestService.undoinService().then((request)=>
+this.child.undoLastAction(request));
+    
   }
 }
 
